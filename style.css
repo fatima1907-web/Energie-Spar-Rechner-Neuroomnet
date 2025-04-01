@@ -1,0 +1,471 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    /* Original background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    color: #333;
+    /* Original text color */
+}
+
+.container {
+    background-color: #b0bd4f;
+    /* Original green container background */
+    padding: 25px;
+    width: 85%;
+    max-width: 950px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+h1,
+h2,
+h3 {
+    color: #333;
+    /* Original heading color */
+    margin-bottom: 15px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+/* Use original light green/beige for sections */
+.input-section,
+.device-list,
+.calculation-section,
+.results,
+.chart-section {
+    background-color: #e9f0c3;
+    padding: 20px;
+    border-radius: 8px;
+    /* Optional: remove border or use original subtle one */
+    /* border: 1px solid #ccc; */
+}
+
+/* Make device list scrollable */
+.device-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    max-height: 280px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    /* Original border color */
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.device-list li {
+    margin: 0;
+    border-bottom: 1px solid #eee;
+    /* Lighter separator */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-size: 14px;
+    background: white;
+    /* Ensure white background */
+}
+
+.device-list li:last-child {
+    border-bottom: none;
+}
+
+.device-list li button {
+    color: white;
+    border: none;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.device-list li button:hover {
+    transform: scale(1.1);
+}
+
+/* Original Edit Button Colors */
+.device-list li button.edit-button {
+    background: green;
+    margin-right: 8px;
+}
+
+.device-list li button.edit-button:hover {
+    background: #3b5a26;
+}
+
+/* Original Remove Button Colors */
+.device-list li button.remove-button {
+    background: #ff4444;
+}
+
+.device-list li button.remove-button:hover {
+    background: #cc0000;
+}
+
+.device-actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+.info-message {
+    text-align: center;
+    color: #666;
+    /* Original darker gray */
+    font-style: italic;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    /* Light background for info */
+    border-radius: 5px;
+}
+
+#noDevicesMessage.info-message {
+    background-color: transparent;
+    /* Keep original transparent background for no-devices message */
+    padding: 5px;
+}
+
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 3px;
+    color: #333;
+    /* Original label color */
+    font-size: 15px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    /* Original border */
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input:disabled {
+    background-color: #e9ecef;
+    /* Standard disabled background */
+    cursor: not-allowed;
+}
+
+button {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Original Blue Button (Add/Calculate) */
+#addDeviceButton,
+.calculation-section button {
+    background-color: #3c92ca;
+    /* Your blue */
+    color: white;
+}
+
+#addDeviceButton:hover,
+.calculation-section button:hover {
+    background-color: #18405a;
+    /* Original dark blue hover */
+}
+
+/* Original Warning Button (Reset) */
+button.warning-button {
+    background-color: #a94442;
+    /* Original red */
+    color: white;
+    margin-top: 15px;
+}
+
+button.warning-button:hover {
+    background-color: #843534;
+    /* Original dark red hover */
+}
+
+/* Original Export Buttons */
+button.primary-button {
+    background-color: #3c92ca;
+    /* Your blue */
+    color: white;
+}
+
+button.primary-button:hover {
+    background-color: #18405a;
+    /* Original dark blue hover */
+}
+
+button.secondary-button {
+    background-color: #666;
+    /* Original gray */
+    color: white;
+}
+
+button.secondary-button:hover {
+    background-color: #444;
+    /* Darker gray hover */
+}
+
+.results {
+    margin-top: 25px;
+    background-color: #f9f9f9;
+    /* Use light background for results similar to original */
+    border: 1px solid #eee;
+}
+
+.results p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.results .highlight {
+    /* Style for savings - keep green */
+    font-weight: bold;
+    color: #28a745;
+}
+
+.eco-impact {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    /* Original separator */
+}
+
+.eco-impact h3 {
+    margin-bottom: 10px;
+    color: #333;
+    /* Ensure heading color */
+}
+
+.co2-source {
+    font-size: 0.8em;
+    color: #666;
+    /* Original gray */
+    display: block;
+    margin-top: 3px;
+}
+
+
+.chart-section {
+    margin-top: 25px;
+    background: white;
+    /* White background for chart area */
+}
+
+.chart-container {
+    position: relative;
+    height: 350px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.export-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.calculation-section {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: end;
+    gap: 20px;
+    /* background-color: #e9f0c3; */
+    /* Section bg is already set */
+}
+
+.calculation-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.calculation-section label {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.calculation-section input {
+    margin-top: 0;
+}
+
+.calculation-section button {
+    margin-top: 0;
+    height: 40px;
+    padding: 8px 15px;
+}
+
+/* Message Styling - Keep the distinct message colors */
+#inputMessages,
+#listMessages,
+#resultsMessages,
+#globalMessages {
+    margin-bottom: 15px;
+}
+
+.success-message,
+.error-message,
+.info-message {
+    /* Add info-message here if used */
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.success-message {
+    background-color: #dff0d8;
+    /* Light green */
+    color: #3c763d;
+    /* Dark green */
+    border: 1px solid #d6e9c6;
+}
+
+.error-message {
+    background-color: #f2dede;
+    /* Light red */
+    color: #a94442;
+    /* Dark red */
+    border: 1px solid #ebccd1;
+}
+
+/* Added style for info messages if used beyond #noDevicesMessage */
+.info-message:not(#noDevicesMessage) {
+    background-color: #d9edf7;
+    /* Light blue */
+    color: #31708f;
+    /* Dark blue */
+    border: 1px solid #bce8f1;
+}
+
+
+/* Tooltip Styling - Use original dark style */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    cursor: help;
+    font-weight: normal;
+    color: #3c92ca;
+    /* Match button blue for icon? Or keep subtle? */
+    /* color: #666; */
+    /* Alternative: subtle gray */
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 220px;
+    background-color: #555;
+    /* Original dark background */
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 8px 10px;
+    position: absolute;
+    z-index: 10;
+    bottom: 130%;
+    left: 50%;
+    margin-left: -110px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 0.95;
+}
+
+
+/* Responsive Design - Inherited from previous version */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .export-section {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .calculation-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .calculation-inputs {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .calculation-section button {
+        margin-top: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .device-list ul {
+        max-height: 200px;
+    }
+}

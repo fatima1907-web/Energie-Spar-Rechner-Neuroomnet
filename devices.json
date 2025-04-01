@@ -1,0 +1,19 @@
+{
+  "devices": [
+      { "name": "Mini-PC", "watt": 50 },
+      { "name": "Mittlerer-PC", "watt": 150 },
+      { "name": "Leistungsstarker-PC", "watt": 300 },
+      { "name": "Projektor", "watt": 200 },
+      { "name": "Monitor (24\")", "watt": 30 },
+      { "name": "Monitor (27\")", "watt": 40 },
+      { "name": "Monitor (32\")", "watt": 50 },
+      { "name": "55\" Display", "watt": 120 },
+      { "name": "15\" Touchscreen", "watt": 25 },
+      { "name": "LED-Beleuchtung (klein)", "watt": 10 },
+      { "name": "LED-Beleuchtung (mittel)", "watt": 30 },
+      { "name": "LED-Beleuchtung (groß)", "watt": 50 },
+      { "name": "Audio-System (klein)", "watt": 20 },
+      { "name": "Audio-System (mittel)", "watt": 80 },
+      { "name": "Audio-System (groß)", "watt": 150 }
+  ]
+}
