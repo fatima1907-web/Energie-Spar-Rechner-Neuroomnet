@@ -16,11 +16,8 @@ const globalMessagesDiv = document.getElementById('globalMessages');
 document.addEventListener("DOMContentLoaded", async () => {
     try {
         // --- EmailJS Initialisierung ---
-        // WICHTIG: Ersetze 'YOUR_PUBLIC_KEY' mit deinem tatsächlichen Public Key von EmailJS!
-        // Du findest ihn in deinem EmailJS Account unter Account -> API Keys -> Public Key.
         emailjs.init('YyYmd6k_joEe9G4sG');
-        // ------------------------------
-
+    
         showLoadingMessage("Lade Geräteliste...");
 
         // Geräte aus JSON laden
@@ -105,7 +102,6 @@ function handleDeviceSelectChange() {
 }
 
 // === Funktion zum Hinzufügen von Tooltips ===
-// Fügt Info-Symbole neben den Labels hinzu.
 function addTooltips() {
     const tooltipsData = [
         { id: "deviceSelect", text: "Wählen Sie ein vordefiniertes Gerät oder 'Eigene Angaben' für manuelle Eingabe." },
@@ -144,6 +140,7 @@ function clearMessages(container) {
     }
 }
 // Zeigt eine Nachricht an (mit Typ für Styling).
+
 function showMessage(container, message, type) {
     if (!container) return;
     clearMessages(container);
@@ -263,6 +260,7 @@ function addDevice() {
     saveDevicesToStorage();
 }
 // Setzt Eingabefelder zurück.
+
 function resetInputFields() {
     document.getElementById("deviceSelect").selectedIndex = 0;
     handleDeviceSelectChange();
@@ -555,8 +553,6 @@ function printResults() {
      if (savingsValue === "0" || !document.getElementById("costs365").textContent || document.getElementById("costs365").textContent === "0") {
         return showErrorMessage(resultsMessagesDiv, "Bitte führen Sie zuerst eine Berechnung durch, um Ergebnisse zu drucken.");
     }
-
-    // Daten sammeln
     const resultsHTML = document.querySelector('.results').innerHTML;
     const chartImage = energyChart ? energyChart.toBase64Image() : null;
     const calculationYears = document.getElementById("calculationYears").value;
@@ -570,7 +566,6 @@ function printResults() {
         deviceListHTML += '<li>Keine Geräte hinzugefügt</li>';
     }
     deviceListHTML += '</ul>';
-
     // Druckfenster öffnen und befüllen
     const printWindow = window.open('', '_blank', 'height=600,width=800');
     printWindow.document.write(`
@@ -599,7 +594,6 @@ function printResults() {
     `);
     printWindow.document.close();
     printWindow.focus();
-
     // Kurze Verzögerung vor dem Drucken
     setTimeout(() => {
          try {
