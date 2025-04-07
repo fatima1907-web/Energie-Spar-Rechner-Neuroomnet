@@ -1,0 +1,16 @@
+# Node Modules (niemals ins Git)
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System-Dateien (macOS)
+.DS_Store
+
+# Umgebungsvariablen
+.env
+
+# Build-Ordner
+dist/
