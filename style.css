@@ -10,6 +10,22 @@ body {
     /* Original text color */
 }
 
+/* Notification section */
+.notification {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    z-index: 1000;
+    max-width: 300px;
+    text-align: center;
+  }
+
 .container {
     background-color: #b0bd4f;
     /* Original green container background */
@@ -340,51 +356,6 @@ button.secondary-button:hover {
     height: 40px;
     padding: 8px 15px;
 }
-
-/* Message Styling - Keep the distinct message colors */
-#inputMessages,
-#listMessages,
-#resultsMessages,
-#globalMessages {
-    margin-bottom: 15px;
-}
-
-.success-message,
-.error-message,
-.info-message {
-    /* Add info-message here if used */
-    padding: 12px;
-    border-radius: 5px;
-    margin-top: 10px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.success-message {
-    background-color: #dff0d8;
-    /* Light green */
-    color: #3c763d;
-    /* Dark green */
-    border: 1px solid #d6e9c6;
-}
-
-.error-message {
-    background-color: #f2dede;
-    /* Light red */
-    color: #a94442;
-    /* Dark red */
-    border: 1px solid #ebccd1;
-}
-
-/* Added style for info messages if used beyond #noDevicesMessage */
-.info-message:not(#noDevicesMessage) {
-    background-color: #d9edf7;
-    /* Light blue */
-    color: #31708f;
-    /* Dark blue */
-    border: 1px solid #bce8f1;
-}
-
 
 /* Tooltip Styling - Use original dark style */
 .tooltip {
