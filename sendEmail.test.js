@@ -1,6 +1,6 @@
 const sendEmail = require('./sendEmail'); 
 jest.mock('emailjs-com', () => ({
-    send: jest.fn(), // Die Implementierung (mockResolvedValue/mockRejectedValue) wird in beforeEach/Tests gesetzt
+    send: jest.fn(() => Promise.resolve({ status: 200, text: 'OK' })), // Standardverhalten für erfolgreiche Tests
     init: jest.fn(), 
 }));
 
