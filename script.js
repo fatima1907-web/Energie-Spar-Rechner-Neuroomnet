@@ -402,6 +402,9 @@ function calculateCosts() {
     document.getElementById("chartYears").textContent = calculationYears;
     updateChart(calculationYears, costAnnual247, costAnnualOptimized);
     showSuccessMessage(resultsMessagesDiv, "Berechnung erfolgreich durchgeführt.");
+
+    // Danach Buttons aktivieren, wenn gültig
+    activateExportButtonsIfValid();
 }
 // Aktualisiert das Chart.js-Diagramm.
 function updateChart(years, annualCost247, annualCostOptimized) {
@@ -607,4 +610,14 @@ function printResults() {
              printWindow.alert("Drucken fehlgeschlagen. Bitte versuchen Sie es über das Browsermenü.");
          }
     }, 750);
+}
+
+function activateExportButtonsIfValid() {
+    const savings = document.getElementById("savings").textContent;
+    const costs365 = document.getElementById("costs365").textContent;
+
+    const buttonsEnabled = savings !== "0" && costs365 && costs365 !== "0";
+    
+    document.getElementById("sendEmailBtn").disabled = !buttonsEnabled;
+    document.getElementById("printResultsBtn").disabled = !buttonsEnabled;
 }
