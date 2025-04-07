@@ -139,23 +139,27 @@ function clearMessages(container) {
         container.innerHTML = '';
     }
 }
-// Zeigt eine Nachricht an (mit Typ für Styling).
 
+// Zeigt eine Nachricht an (mit Typ für Styling).
 function showMessage(container, message, type) {
     if (!container) return;
     clearMessages(container);
-    const messageDiv = document.createElement("div");
-    messageDiv.className = `${type}-message`;
-    messageDiv.textContent = message;
-    container.appendChild(messageDiv);
-    // Erfolgsmeldungen automatisch ausblenden
-    if (type === 'success') {
-         setTimeout(() => {
-             if (messageDiv.parentNode === container) {
-                container.removeChild(messageDiv);
-             }
-         }, 4000);
-    }
+    const notificationDiv = document.getElementById('resultsMessages');
+    if (!notificationDiv) return;
+
+    const typeColors = {
+        success: '#3c763d',
+        error: '#a94442',
+        info: '#31708f'
+    };
+
+    notificationDiv.innerText = message;
+    notificationDiv.style.display = 'block';
+    notificationDiv.style.backgroundColor = typeColors[type] || '#31708f'; // default zu info
+
+    setTimeout(() => {
+        notificationDiv.style.display = 'none';
+    }, 5000);
 }
 // Hilfsfunktionen für verschiedene Nachrichtentypen.
 function showSuccessMessage(container, message) { showMessage(container, message, 'success'); }
